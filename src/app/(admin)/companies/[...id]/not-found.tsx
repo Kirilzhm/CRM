@@ -1,13 +1,17 @@
-import React from "react";
-import Link from "next/link";
+'use client';
 
-export interface NotFound {}
+import React from 'react';
+import Link from 'next/link';
 
-export default function NotFound({}: NotFound) {
+export interface NotFoundProps {}
+
+export default function NotFound({}: NotFoundProps) {
     return (
-        <div>
-            <p>Could not found company</p>
-            <Link href="/companies" className="text-blue-500">Back to companies</Link>
-        </div>
-    )
+    <div>
+        <p>Could not found company</p>
+        <Link href="/companies" className="text-blue-500">
+        Back to companies
+        </Link>
+    </div>
+    );
 }
