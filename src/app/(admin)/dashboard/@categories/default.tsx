@@ -1,7 +1,4 @@
-import React from 'react';
 
-export interface DefaultPaops {}
-
-export default function Default({   }: DefaultPaops) {
+export default function Default() {
     return null;
 }

@@ -3,11 +3,6 @@ import { getSummaryStats, SummaryStats } from '@/lib/api';
 import StatCard, { StatCardType } from '@/app/components/stat-card';
 import Link from "next/link";
 
-
-
-
-export interface PageProps {}
-
 const labelByStat: Record<keyof SummaryStats, string> = {
     promotions: 'Total promotions',
     categories: 'Total categories',
@@ -15,13 +10,15 @@ const labelByStat: Record<keyof SummaryStats, string> = {
     activeCompanies: 'Total active companies',
 };
 
-export default async function Page({}: PageProps) {
-    const data = await getSummaryStats({
-        // Затримка на 5с для даних
-        next: {
-        revalidate: 5,
-    }
-    });
+export default async function Page() {
+    const data = await getSummaryStats(
+    //     {
+    //     // Затримка на 5с для даних
+    //     next: {
+    //     revalidate: 5,
+    // }
+    // }
+);
 
     return (
         <div className="grid grid-cols-12 gap-5">
